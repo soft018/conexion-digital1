@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administraci&oacute;n de noticias | Conexi&oacute;n Digital</title>
+  <meta name="description" content="Mini CRUD de demostraci&oacute;n para crear y eliminar noticias en Conexi&oacute;n Digital.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="administrar" class="home-page admin-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header home-header">
+    <div class="container-app header-main">
+      <a class="brand brand-home" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><circle cx="18" cy="32" r="5" fill="#2B74FF"/><circle cx="32" cy="20" r="4" fill="#fff"/><circle cx="46" cy="32" r="5" fill="#D97706"/><path d="M18 32 L32 20 L46 32 L32 46 Z" stroke="#fff" stroke-width="3"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>Conexi&oacute;n Digital</strong>
+          <span>Periodismo de ideas</span>
+        </span>
+      </a>
+      <form class="header-search search-with-btn" action="noticias.html" method="get" role="search" data-header-search>
+        <label class="visually-hidden" for="q-header">Buscar noticias</label>
+        <input id="q-header" type="search" name="q" placeholder="Buscar noticias...">
+        <button class="btn btn-primary search-go" type="submit">Buscar</button>
+      </form>
+      <div class="header-utils">
+        <button class="icon-btn d-md-none" type="button" data-search-toggle aria-label="Abrir buscador"><i class="bi bi-search"></i></button>
+        <a class="header-fav" href="favoritos.html" aria-label="Guardados">
+          <i class="bi bi-bookmark-heart" aria-hidden="true"></i>
+          <span class="fav-count" data-fav-count>0</span>
+        </a>
+        <button class="util-link" type="button" data-login-demo><i class="bi bi-person" aria-hidden="true"></i><span>Administrador</span></button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav home-nav" data-nav-panel id="menu-principal" aria-label="Principal">
+      <div class="container-app">
+        <ul class="nav-list">
+          <li><a href="index.html" data-nav="inicio">Inicio</a></li>
+          <li><a href="noticias.html" data-nav="noticias">Noticias</a></li>
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+          <li><a href="favoritos.html" data-nav="favoritos">Favoritos</a></li>
+          <li><a href="contacto.html" data-nav="contacto">Contacto</a></li>
+          <li><a href="administrar.html" data-nav="administrar">Administrar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" class="section archive-main">
+    <div class="container-app">
+      <nav aria-label="Ruta">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Inicio</a></li>
+          <li>/</li>
+          <li>Administracion</li>
+        </ol>
+      </nav>
+
+      <div class="section-head">
+        <div>
+          <p class="kicker">Mesa de redacci&oacute;n</p>
+          <h1>Administracion de noticias</h1>
+          <p class="lead">Mini CRUD academico: crear y eliminar. La edicion queda para una fase posterior.</p>
+        </div>
+        <button class="btn btn-accent" type="button" data-bs-toggle="modal" data-bs-target="#modalCrear">
+          <i class="bi bi-plus-lg" aria-hidden="true"></i> Crear noticia
+        </button>
+      </div>
+
+      <div class="stat-grid" data-admin-stats></div>
+      <p class="notice-box"><i class="bi bi-info-circle" aria-hidden="true"></i> Los cambios se guardan unicamente en este navegador.</p>
+
+      <form class="admin-filters" data-admin-filters>
+        <label class="visually-hidden" for="admin-busqueda">Buscar</label>
+        <input id="admin-busqueda" type="search" placeholder="Buscar por titulo, autor o resumen...">
+        <label class="visually-hidden" for="admin-categoria">Categor&iacute;a</label>
+        <select id="admin-categoria">
+          <option value="">Todas las categor&iacute;as</option>
+          <option value="tecnologia">Tecnolog&iacute;a</option>
+          <option value="empresas">Empresas</option>
+          <option value="comercio">Comercio</option>
+          <option value="deportes">Deportes</option>
+          <option value="ciencia">Ciencia</option>
+        </select>
+        <label class="visually-hidden" for="admin-orden">Orden</label>
+        <select id="admin-orden" data-admin-sort>
+          <option value="recientes">M&aacute;s recientes</option>
+          <option value="antiguas">M&aacute;s antiguas</option>
+          <option value="titulo">T&iacute;tulo A-Z</option>
+        </select>
+        <button class="btn btn-ghost" type="button" data-admin-clear>Limpiar filtros</button>
+      </form>
+
+      <div class="admin-toolbar">
+        <p data-admin-count></p>
+        <div class="view-toggle">
+          <button class="page-btn is-current" type="button" data-admin-view="lista" aria-pressed="true" aria-label="Vista lista"><i class="bi bi-list-ul"></i></button>
+          <button class="page-btn" type="button" data-admin-view="grid" aria-pressed="false" aria-label="Vista cuadricula"><i class="bi bi-grid"></i></button>
+        </div>
+      </div>
+
+      <div class="panel table-wrap" data-admin-table>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th scope="col">Noticia</th>
+              <th scope="col">Categor&iacute;a</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody data-admin-body></tbody>
+        </table>
+        <div class="empty-state" data-empty hidden>
+          <h2>No hay noticias para mostrar</h2>
+          <p>Ajusta la b&uacute;squeda o crea una noticia de demostraci&oacute;n.</p>
+        </div>
+      </div>
+      <div class="admin-grid" data-admin-grid hidden></div>
+      <nav class="pagination-bar" data-admin-pagination aria-label="Paginacion"></nav>
+    </div>
+  </main>
+
+  <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="tituloCrear" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="tituloCrear">Crear noticia de demostraci&oacute;n</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <form data-create-form>
+          <div class="modal-body">
+            <div class="form-field">
+              <label for="nueva-titulo">T&iacute;tulo</label>
+              <input id="nueva-titulo" name="titulo" type="text" required>
+            </div>
+            <div class="split-2">
+              <div class="form-field">
+                <label for="nueva-categoria">Categor&iacute;a</label>
+                <select id="nueva-categoria" name="categoria" required>
+                  <option value="">Selecciona</option>
+                  <option value="tecnologia">Tecnolog&iacute;a</option>
+                  <option value="empresas">Empresas</option>
+                  <option value="comercio">Comercio</option>
+                  <option value="deportes">Deportes</option>
+                  <option value="ciencia">Ciencia</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="nueva-autor">Autor</label>
+                <input id="nueva-autor" name="autor" type="text" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="nueva-fecha">Fecha de publicaci&oacute;n</label>
+              <input id="nueva-fecha" name="fecha" type="date" required>
+            </div>
+            <div class="form-field">
+              <label for="nueva-resumen">Resumen</label>
+              <textarea id="nueva-resumen" name="resumen" rows="3" required></textarea>
+            </div>
+            <div class="form-field">
+              <label for="nueva-contenido">Contenido</label>
+              <textarea id="nueva-contenido" name="contenido" rows="6" required placeholder="Separa los p&aacute;rrafos con una l&iacute;nea en blanco."></textarea>
+            </div>
+            <div class="form-field">
+              <label for="nueva-imagen">URL de la imagen</label>
+              <input id="nueva-imagen" name="imagen" type="url" placeholder="https://...">
+            </div>
+            <div class="form-field">
+              <label for="nueva-alt">Texto alternativo de la imagen</label>
+              <input id="nueva-alt" name="imagenAlt" type="text">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-ghost" type="button" data-bs-dismiss="modal">Cancelar</button>
+            <button class="btn btn-accent" type="submit">Publicar en el prototipo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="tituloEliminar" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="tituloEliminar">Eliminar noticia</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Esta acci&oacute;n quitar&aacute; del prototipo la noticia <strong data-delete-name></strong>.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" type="button" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-danger" type="button" data-confirm-delete>S&iacute;, eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container-app footer-grid home-footer">
+      <div class="footer-brand">
+        <strong>Conexi&oacute;n Digital</strong>
+        <p>Medio de demostraci&oacute;n acad&eacute;mica sobre tecnolog&iacute;a, empresas, comercio, deportes y ciencia.</p>
+        <ul class="social-list">
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Categor&iacute;as</h2>
+        <ul class="footer-list">
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul class="footer-list">
+          <li><a href="mailto:redaccion@conexiondigital.demo">redaccion@conexiondigital.demo</a></li>
+          <li>Cra. 7 # 12-34, aula 305</li>
+          <li>+57 601 555 0102</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Siguenos</h2>
+        <p>Prototipo de aula. No es un medio informativo real.</p>
+      </div>
+    </div>
+    <div class="container-app footer-copy footer-legal">
+      <p>&copy; 2026 Conexi&oacute;n Digital &middot; Prototipo Front End</p>
+      <p><a href="contacto.html">T&eacute;rminos</a> &middot; <a href="contacto.html">Privacidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

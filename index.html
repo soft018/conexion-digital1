@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conexi&oacute;n Digital | Peri&oacute;dico acad&eacute;mico de demostraci&oacute;n</title>
+  <meta name="description" content="Portada de Conexi&oacute;n Digital: noticias de tecnolog&iacute;a, empresas, comercio, deportes y ciencia.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="inicio" class="home-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="ticker-bar" aria-label="&Uacute;ltima hora">
+    <div class="container-app ticker-inner">
+      <span class="ticker-label">&Uacute;ltima hora</span>
+      <div class="ticker-track" data-ticker></div>
+      <div class="ticker-meta">
+        <span data-today></span>
+        <span>Bogot&aacute; &middot; 24&deg;C</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header home-header">
+    <div class="container-app header-main">
+      <a class="brand brand-home" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><circle cx="18" cy="32" r="5" fill="#2B74FF"/><circle cx="32" cy="20" r="4" fill="#fff"/><circle cx="46" cy="32" r="5" fill="#D97706"/><path d="M18 32 L32 20 L46 32 L32 46 Z" stroke="#fff" stroke-width="3"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>Conexi&oacute;n Digital</strong>
+          <span>Periodismo de ideas</span>
+        </span>
+      </a>
+      <form class="header-search" action="noticias.html" method="get" role="search" data-header-search>
+        <label class="visually-hidden" for="q-header">Buscar noticias</label>
+        <input id="q-header" type="search" name="q" placeholder="Buscar noticias...">
+        <button type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+      </form>
+      <div class="header-utils">
+        <button class="icon-btn d-md-none" type="button" data-search-toggle aria-label="Abrir buscador"><i class="bi bi-search"></i></button>
+        <a class="util-link" href="#boletin"><i class="bi bi-envelope" aria-hidden="true"></i><span>Bolet&iacute;n</span></a>
+        <button class="util-link" type="button" data-login-demo><i class="bi bi-person" aria-hidden="true"></i><span>Iniciar sesi&oacute;n</span></button>
+        <a class="header-fav" href="favoritos.html" aria-label="Ir a favoritos">
+          <i class="bi bi-bookmark-heart" aria-hidden="true"></i>
+          <span class="fav-count" data-fav-count>0</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav home-nav" data-nav-panel id="menu-principal" aria-label="Principal">
+      <div class="container-app">
+        <ul class="nav-list">
+          <li><a href="index.html" data-nav="inicio">Inicio</a></li>
+          <li><a href="noticias.html" data-nav="noticias">Noticias</a></li>
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+          <li><a href="favoritos.html" data-nav="favoritos">Favoritos</a></li>
+          <li><a href="contacto.html" data-nav="contacto">Contacto</a></li>
+          <li><a href="administrar.html" data-nav="administrar">Administrar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="home-hero">
+      <div class="container-app hero-grid">
+        <div data-featured-main></div>
+        <div class="hero-side" data-featured-side></div>
+      </div>
+    </section>
+
+    <section class="section home-latest reveal">
+      <div class="container-app">
+        <div class="section-head">
+          <h2>&Uacute;ltimas noticias</h2>
+          <a class="link-more" href="noticias.html">Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="latest-grid">
+          <div data-latest-main></div>
+          <div class="latest-side" data-latest></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-app cat-rows">
+        <article class="cat-block reveal" data-cat-block="tecnologia">
+          <div class="section-head">
+            <h2>Tecnolog&iacute;a</h2>
+            <a class="link-more" href="noticias.html?categoria=tecnologia">Ver m&aacute;s</a>
+          </div>
+          <div class="cat-layout">
+            <div data-cat-feature="tecnologia"></div>
+            <div class="headline-list" data-cat-list="tecnologia"></div>
+          </div>
+        </article>
+        <article class="cat-block reveal" data-cat-block="empresas">
+          <div class="section-head">
+            <h2>Empresas</h2>
+            <a class="link-more" href="noticias.html?categoria=empresas">Ver m&aacute;s</a>
+          </div>
+          <div class="cat-layout">
+            <div data-cat-feature="empresas"></div>
+            <div class="headline-list" data-cat-list="empresas"></div>
+          </div>
+        </article>
+        <article class="cat-block reveal" data-cat-block="comercio">
+          <div class="section-head">
+            <h2>Comercio</h2>
+            <a class="link-more" href="noticias.html?categoria=comercio">Ver m&aacute;s</a>
+          </div>
+          <div class="cat-layout">
+            <div data-cat-feature="comercio"></div>
+            <div class="headline-list" data-cat-list="comercio"></div>
+          </div>
+        </article>
+        <article class="cat-block reveal" data-cat-block="deportes">
+          <div class="section-head">
+            <h2>Deportes</h2>
+            <a class="link-more" href="noticias.html?categoria=deportes">Ver m&aacute;s</a>
+          </div>
+          <div class="cat-layout">
+            <div data-cat-feature="deportes"></div>
+            <div class="headline-list" data-cat-list="deportes"></div>
+          </div>
+        </article>
+        <article class="cat-block reveal" data-cat-block="ciencia">
+          <div class="section-head">
+            <h2>Ciencia</h2>
+            <a class="link-more" href="noticias.html?categoria=ciencia">Ver m&aacute;s</a>
+          </div>
+          <div class="cat-layout">
+            <div data-cat-feature="ciencia"></div>
+            <div class="headline-list" data-cat-list="ciencia"></div>
+          </div>
+        </article>
+        <aside class="newsletter-card reveal" id="boletin">
+          <div class="newsletter-icon" aria-hidden="true"><i class="bi bi-envelope-paper"></i></div>
+          <h2>Recibe la edici&oacute;n de demostraci&oacute;n</h2>
+          <p>Un resumen semanal de las notas acad&eacute;micas. El env&iacute;o no sale de este navegador.</p>
+          <form data-newsletter novalidate>
+            <label class="visually-hidden" for="boletin-correo">Correo electr&oacute;nico</label>
+            <input id="boletin-correo" type="email" name="correo" autocomplete="email" required placeholder="tu.nombre@correo.com">
+            <button class="btn btn-accent" type="submit">Suscribirme</button>
+            <p hidden data-newsletter-msg></p>
+          </form>
+          <ul class="newsletter-perks">
+            <li><i class="bi bi-shield-check" aria-hidden="true"></i> Sin spam</li>
+            <li><i class="bi bi-gift" aria-hidden="true"></i> Gratis</li>
+            <li><i class="bi bi-inbox" aria-hidden="true"></i> En tu bandeja</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section opinion-section reveal">
+      <div class="container-app">
+        <div class="section-head">
+          <h2>Opini&oacute;n</h2>
+          <span class="kicker">Voces de la redacci&oacute;n de aula</span>
+        </div>
+        <div class="opinion-grid">
+          <article class="opinion-card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Retrato ilustrativo de Laura Mendez">
+            <h3>Laura Mendez</h3>
+            <p class="opinion-role">Tecnolog&iacute;a y educaci&oacute;n</p>
+            <p>Como explicar el uso responsable de asistentes de codigo sin perder el criterio del estudiante.</p>
+          </article>
+          <article class="opinion-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Retrato ilustrativo de Andres Rios">
+            <h3>Andres Rios</h3>
+            <p class="opinion-role">Ciencia y ciudad</p>
+            <p>Los tableros urbanos sirven para ensenar privacidad, no para vigilar a quien camina.</p>
+          </article>
+          <article class="opinion-card">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Retrato ilustrativo de Camila Ortega">
+            <h3>Camila Ortega</h3>
+            <p class="opinion-role">Industria y energia</p>
+            <p>Un titular honesto distingue el prototipo de laboratorio del producto que llega a la calle.</p>
+          </article>
+          <article class="opinion-card">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Retrato ilustrativo de Diego Herrera">
+            <h3>Diego Herrera</h3>
+            <p class="opinion-role">Empresas</p>
+            <p>Antes del precio, un consejo deberia preguntar si las plataformas pueden convivir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aula-banner reveal">
+      <div class="container-app aula-inner">
+        <div>
+          <p class="kicker">Conexi&oacute;n Digital para el aula</p>
+          <h2>Un peri&oacute;dico-laboratorio para ensayar lectura digital</h2>
+          <p>Explora el listado, guarda favoritos y prueba el panel de administraci&oacute;n. Todo el contenido es de demostraci&oacute;n acad&eacute;mica.</p>
+          <a class="btn btn-primary" href="noticias.html">Explorar noticias</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-app footer-grid home-footer">
+      <div class="footer-brand">
+        <strong>Conexi&oacute;n Digital</strong>
+        <p>Medio de demostraci&oacute;n acad&eacute;mica sobre tecnolog&iacute;a, empresas, comercio, deportes y ciencia.</p>
+        <ul class="social-list">
+          <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a></li>
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Secciones</h2>
+        <ul class="footer-list">
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Recursos</h2>
+        <ul class="footer-list">
+          <li><a href="noticias.html">Archivo de noticias</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="administrar.html">Administrar</a></li>
+        </ul>
+      </div>
+      <div class="footer-edition">
+        <h2>Edici&oacute;n de hoy</h2>
+        <p>Portada acad&eacute;mica lista para revisar en clase y continuar el prototipo funcional.</p>
+        <a class="btn btn-accent" href="noticias.html">Ver edici&oacute;n completa</a>
+      </div>
+    </div>
+    <div class="container-app footer-copy footer-legal">
+      <p>&copy; 2026 Conexi&oacute;n Digital &middot; Prototipo Front End</p>
+      <p><a href="contacto.html">T&eacute;rminos</a> &middot; <a href="contacto.html">Privacidad</a> &middot; <a href="contacto.html">Accesibilidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

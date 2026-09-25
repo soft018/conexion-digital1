@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Conexi&oacute;n Digital</title>
+  <meta name="description" content="Formulario de contacto de demostraci&oacute;n de Conexi&oacute;n Digital. No env&iacute;a datos a un servidor.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contacto" class="home-page contact-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header home-header">
+    <div class="container-app header-main">
+      <a class="brand brand-home" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><circle cx="18" cy="32" r="5" fill="#2B74FF"/><circle cx="32" cy="20" r="4" fill="#fff"/><circle cx="46" cy="32" r="5" fill="#D97706"/><path d="M18 32 L32 20 L46 32 L32 46 Z" stroke="#fff" stroke-width="3"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>Conexi&oacute;n Digital</strong>
+          <span>Periodismo de ideas</span>
+        </span>
+      </a>
+      <form class="header-search search-with-btn" action="noticias.html" method="get" role="search" data-header-search>
+        <label class="visually-hidden" for="q-header">Buscar noticias</label>
+        <input id="q-header" type="search" name="q" placeholder="Buscar noticias...">
+        <button class="btn btn-primary search-go" type="submit">Buscar</button>
+      </form>
+      <div class="header-utils">
+        <button class="icon-btn d-md-none" type="button" data-search-toggle aria-label="Abrir buscador"><i class="bi bi-search"></i></button>
+        <a class="header-fav" href="favoritos.html" aria-label="Ir a guardados">
+          <i class="bi bi-bookmark-heart" aria-hidden="true"></i>
+          <span class="visually-hidden">Guardados</span>
+          <span class="fav-count" data-fav-count>0</span>
+        </a>
+        <button class="util-link" type="button" data-login-demo><i class="bi bi-person" aria-hidden="true"></i><span>Iniciar sesi&oacute;n</span></button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="menu-principal">
+          <span class="visually-hidden">Abrir menu</span>
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="site-nav home-nav" data-nav-panel id="menu-principal" aria-label="Principal">
+      <div class="container-app">
+        <ul class="nav-list">
+          <li><a href="index.html" data-nav="inicio">Inicio</a></li>
+          <li><a href="noticias.html" data-nav="noticias">Noticias</a></li>
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+          <li><a href="favoritos.html" data-nav="favoritos">Favoritos</a></li>
+          <li><a href="contacto.html" data-nav="contacto">Contacto</a></li>
+          <li><a href="administrar.html" data-nav="administrar">Administrar</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" class="section archive-main">
+    <div class="container-app">
+      <nav aria-label="Ruta">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Inicio</a></li>
+          <li>/</li>
+          <li>Contacto</li>
+        </ol>
+      </nav>
+
+      <div class="contact-hero">
+        <div>
+          <p class="kicker">Hablemos</p>
+          <h1>Contacta con nuestra redacci&oacute;n</h1>
+          <p class="lead">Estos datos son de ejemplo. El env&iacute;o queda en el navegador y no llega a un servidor.</p>
+        </div>
+        <figure class="contact-visual">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Mesa de trabajo con cuaderno, bol&iacute;grafo y taza, imagen ilustrativa">
+        </figure>
+      </div>
+
+      <div class="contact-grid">
+        <section class="panel contact-channels">
+          <h2>Canales de atenci&oacute;n</h2>
+          <ul class="channel-list">
+            <li><i class="bi bi-envelope" aria-hidden="true"></i><div><strong>Correo</strong><span>redaccion@conexiondigital.demo</span></div></li>
+            <li><i class="bi bi-telephone" aria-hidden="true"></i><div><strong>Tel&eacute;fono</strong><span>+57 601 555 0102</span></div></li>
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><div><strong>Direcci&oacute;n</strong><span>Cra. 7 # 12-34, aula 305, Bogot&aacute;</span></div></li>
+            <li><i class="bi bi-clock" aria-hidden="true"></i><div><strong>Horario</strong><span>Lunes a viernes, 8:00 a 16:00</span></div></li>
+          </ul>
+          <h3>&iquest;Qu&eacute; puedes enviarnos?</h3>
+          <ul>
+            <li>Correcciones sobre el prototipo</li>
+            <li>Propuestas editoriales de aula</li>
+            <li>Dudas de navegaci&oacute;n o accesibilidad</li>
+            <li>Comentarios sobre el dise&ntilde;o</li>
+          </ul>
+          <p class="notice-box"><i class="bi bi-info-circle" aria-hidden="true"></i> En una redacci&oacute;n real la respuesta tardar&iacute;a 1 o 2 d&iacute;as h&aacute;biles. Aqu&iacute; solo se muestra la confirmaci&oacute;n.</p>
+        </section>
+
+        <section class="panel contact-form-card">
+          <h2>Escribe a la mesa</h2>
+          <p class="notice-box">Formulario de demostraci&oacute;n. Los datos no salen de este navegador.</p>
+          <form data-contact-form novalidate>
+            <div class="form-field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+              <small class="field-error" data-error="nombre"></small>
+            </div>
+            <div class="form-field">
+              <label for="correo">Correo electr&oacute;nico</label>
+              <input id="correo" name="correo" type="email" autocomplete="email" required>
+              <small class="field-error" data-error="correo"></small>
+            </div>
+            <div class="form-field">
+              <label for="asunto">Asunto</label>
+              <input id="asunto" name="asunto" type="text" required>
+              <small class="field-error" data-error="asunto"></small>
+            </div>
+            <div class="form-field">
+              <label for="categoria">Categor&iacute;a de consulta</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">Selecciona una opci&oacute;n</option>
+                <option value="tecnologia">Tecnolog&iacute;a</option>
+                <option value="empresas">Empresas</option>
+                <option value="comercio">Comercio</option>
+                <option value="deportes">Deportes</option>
+                <option value="ciencia">Ciencia</option>
+                <option value="general">Asunto general</option>
+              </select>
+              <small class="field-error" data-error="categoria"></small>
+            </div>
+            <div class="form-field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="6" maxlength="800" required data-count></textarea>
+              <small><span data-char-count>0</span> / 800</small>
+              <small class="field-error" data-error="mensaje"></small>
+            </div>
+            <div class="form-field">
+              <label class="checkbox-field" for="privacidad">
+                <input id="privacidad" name="privacidad" type="checkbox">
+                <span>Acepto la pol&iacute;tica de privacidad de demostraci&oacute;n. Entiendo que este env&iacute;o no sale del navegador.</span>
+              </label>
+              <small class="field-error" data-error="privacidad"></small>
+            </div>
+            <button class="btn btn-accent" type="submit"><i class="bi bi-send" aria-hidden="true"></i> Enviar mensaje</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="faq-block">
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>&iquest;Se env&iacute;a mi mensaje a alguien?</summary>
+          <p>No. Esta primera entrega solo valida el formulario en el navegador.</p>
+        </details>
+        <details>
+          <summary>&iquest;D&oacute;nde quedan los favoritos?</summary>
+          <p>En localStorage de este navegador. Puedes verlos en Favoritos.</p>
+        </details>
+        <details>
+          <summary>&iquest;Puedo editar una noticia?</summary>
+          <p>En Administrar solo se pide crear y eliminar. La edici&oacute;n queda para una fase posterior.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-app footer-grid home-footer">
+      <div class="footer-brand">
+        <strong>Conexi&oacute;n Digital</strong>
+        <p>Medio de demostraci&oacute;n acad&eacute;mica sobre tecnolog&iacute;a, empresas, comercio, deportes y ciencia.</p>
+        <ul class="social-list">
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Categor&iacute;as</h2>
+        <ul class="footer-list">
+          <li><a href="noticias.html?categoria=tecnologia">Tecnolog&iacute;a</a></li>
+          <li><a href="noticias.html?categoria=empresas">Empresas</a></li>
+          <li><a href="noticias.html?categoria=comercio">Comercio</a></li>
+          <li><a href="noticias.html?categoria=deportes">Deportes</a></li>
+          <li><a href="noticias.html?categoria=ciencia">Ciencia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul class="footer-list">
+          <li><a href="mailto:redaccion@conexiondigital.demo">redaccion@conexiondigital.demo</a></li>
+          <li>Cra. 7 # 12-34, aula 305</li>
+          <li>+57 601 555 0102</li>
+        </ul>
+      </div>
+      <aside class="footer-edition" id="boletin">
+        <h2>Suscr&iacute;bete</h2>
+        <form data-newsletter novalidate>
+          <label class="visually-hidden" for="boletin-correo">Correo</label>
+          <input id="boletin-correo" type="email" name="correo" required placeholder="tu.nombre@correo.com">
+          <button class="btn btn-accent" type="submit">Suscribirme</button>
+          <p hidden data-newsletter-msg></p>
+        </form>
+      </aside>
+    </div>
+    <div class="container-app footer-copy footer-legal">
+      <p>&copy; 2026 Conexi&oacute;n Digital &middot; Prototipo Front End</p>
+      <p><a href="contacto.html">T&eacute;rminos</a> &middot; <a href="contacto.html">Privacidad</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
